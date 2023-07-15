@@ -1,9 +1,14 @@
 <script setup>
-
+import { RouterLink, RouterView } from 'vue-router'
 </script>
 
 <template>
-  <h1>Hello World!</h1>
+  <RouterLink :to="{name: 'home'}"
+              class="mr-4">
+              Home</RouterLink>
+  <RouterLink :to="{name: 'films'}">Films</RouterLink>
+
+  <RouterView/>
 </template>
 
 <style scoped>
