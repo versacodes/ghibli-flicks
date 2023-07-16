@@ -14,8 +14,10 @@
 a,
 .green {
   text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
+  color: hsla(60, 100%, 80%, 1);
   transition: 0.4s;
+  padding: 0.5em;
+  border-radius: 5px;
 }
 
 img {
@@ -29,15 +31,15 @@ img {
   }
 }
 
-@media (min-width: 1024px) {
-  body {
-    display: flex;
-    place-items: center;
-  }
+/* @media (min-width: 1024px) { */
+/*   body { */
+/*     display: flex; */
+/*     place-items: center; */
+/*   } */
 
-  #app {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 0 2rem;
-  }
-}
+/*   #app { */
+/*     display: grid; */
+/*     grid-template-columns: 1fr 1fr; */
+/*     padding: 0 2rem; */
+/*   } */
+/* } */

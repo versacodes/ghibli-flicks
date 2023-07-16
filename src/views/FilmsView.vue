@@ -1,5 +1,5 @@
 <script setup>
-import FilmsCard from '../components/FilmsCard.vue'
+import FilmsList from '../components/FilmsList.vue'
 </script>
 
 <template>
@@ -7,6 +7,6 @@ import FilmsCard from '../components/FilmsCard.vue'
              mx-auto mt-6 mb-12 leading-snug
              font-bold max-w-xl">
              All Ghibli Movies</h1>
-  <FilmsCard/>
+  <FilmsList/>
 </template>
 
