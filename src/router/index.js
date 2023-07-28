@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import FilmsView from '../views/FilmsView.vue'
 import FilmsDetailsView from '../views/FilmsDetailsView.vue'
+import NotFoundView from '../views/NotFoundView.vue'
 
 const router = createRouter({  
   history: createWebHistory(),
@@ -14,12 +15,17 @@ const router = createRouter({
     {
       path: '/films',
       name: 'films',
-      component: FilmsView
+      component: FilmsView,
     },
     {
       path: '/films/:id',
       name: 'filmDetails',
-      component: FilmsDetailsView
+      component: FilmsDetailsView,
+    },
+    {
+      path: '/:catchAll(.*)',
+      name: 'NotFound',
+      component: NotFoundView
     },
   ]
 })
