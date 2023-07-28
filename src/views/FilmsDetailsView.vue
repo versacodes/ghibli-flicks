@@ -1,11 +1,21 @@
-<script setup>
+`<script setup>
 import FilmsCard from '../components/FilmsCard.vue'
 import { useRouter, useRoute } from 'vue-router'
 import { useFilmStore } from '../store/useFilmStore.js'
+import { computed } from 'vue'
 
 const route = useRoute()
 const router = useRouter()
 const filmStore = useFilmStore()
+const isMin = computed(() => {
+	// return false i params.id === 0
+	// convert to int since params are strings
+	return parseInt(route.params.id) === 0 ? false : true
+})
+const isMax = computed(() => {
+	// minus 1 since array starts with 0 and length starts count in 1
+	return parseInt(route.params.id) === filmStore.films.length - 1 ? false : true
+})
 
 </script>
 
@@ -14,10 +24,24 @@ const filmStore = useFilmStore()
              mx-auto my-12 leading-snug
               max-w-xl">
              Info About <br><span class="inline-block mt-3 text-5xl font-bold">"{{ filmStore.films[route.params.id].title }}"</span></h1>
- <!-- button for going back to previous page using router.go -->
-  <button class="text-md border-neutral-300 border-solid border-2
-                text-white p-2 mb-6 mx-auto block"
-          @click="router.go(-1)">Go back</button>
+  <div class="flex justify-between mx-auto max-w-[50rem]">
+    <!-- go to previous film by subtracting params.id by 1, params.id is index of film in films array  -->
+    <!-- only show button if not at first film -->
+    <button class="text-md border-neutral-300 border-solid border-2
+                  text-white p-2 mb-6 block"
+            @click="router.push(`/films/${parseInt(route.params.id) - 1}`)" v-if="isMin">Go to Previous Film</button>
+            
+    <!-- button for going back to films page using router.push -->
+    <button class="text-md border-neutral-300 border-solid border-2
+                  text-white p-2 mb-6 block"
+            @click="router.push('/films')">Go back</button>
+            
+    <!-- go to next film by adding params.id by 1, params.id is index of film in films array  -->
+    <!-- only show button if not at last film -->
+    <button class="text-md border-neutral-300 border-solid border-2
+                  text-white p-2 mb-6 block"
+            @click="router.push(`/films/${parseInt(route.params.id) + 1}`)" v-if="isMax">Go to Next Film</button>
+  </div>
           
   <!-- render the film card based on chosen film from /films -->
   <FilmsCard />
