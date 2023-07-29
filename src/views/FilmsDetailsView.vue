@@ -7,6 +7,9 @@ import { computed } from 'vue'
 const route = useRoute()
 const router = useRouter()
 const filmStore = useFilmStore()
+// tailwind style classes for button
+const buttonStyle = "text-xs border-neutral-300 border-solid border-2 text-white p-[0.8em] mb-6 block sm:p-4 sm:text-lg w-[30%] sm:w-auto"
+
 const isMin = computed(() => {
 	// return false i params.id === 0
 	// convert to int since params are strings
@@ -27,19 +30,16 @@ const isMax = computed(() => {
   <div class="flex justify-between mx-auto max-w-[40rem]">
     <!-- go to previous film by subtracting params.id by 1, params.id is index of film in films array  -->
     <!-- only show button if not at first film -->
-    <button class="text-md border-neutral-300 border-solid border-2
-                  text-white p-2 mb-6 block"
+    <button :class="buttonStyle"
             @click="router.push(`/films/${parseInt(route.params.id) - 1}`)" v-if="isMin">Go to Previous Film</button>
             
     <!-- button for going back to films page using router.push -->
-    <button class="text-md border-neutral-300 border-solid border-2
-                  text-white p-2 mb-6 block"
+    <button :class="buttonStyle"
             @click="router.push('/films')">Go back</button>
             
     <!-- go to next film by adding params.id by 1, params.id is index of film in films array  -->
     <!-- only show button if not at last film -->
-    <button class="text-md border-neutral-300 border-solid border-2
-                  text-white p-2 mb-6 block"
+    <button :class="buttonStyle"
             @click="router.push(`/films/${parseInt(route.params.id) + 1}`)" v-if="isMax">Go to Next Film</button>
   </div>
           

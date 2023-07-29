@@ -8,6 +8,7 @@ body {
   transition: 0.1s;
 }
 
+
 #app {
   max-width: 1280px;
   margin: 0 auto;
@@ -22,11 +23,6 @@ a {
   transition: 0.4s;
   padding: 0.5em;
   border-radius: 5px;
-}
-
-img {
-  max-width: 100%;
-  display: block;
 }
 
 @media (hover: hover) {

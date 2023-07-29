@@ -7,9 +7,10 @@ const filmStore = useFilmStore()
 const router = useRouter()
 
 // choose random films based on random indexes
-// random from 0-6, 6-12, 12-18, 18-22
+// random from 0-6, 6-12, 12-18, 18-21
 // (max - min + 1) + 1
-const randomIndexForFilms = [Math.floor(Math.random()*7), Math.floor((Math.random()*7)+6), Math.floor((Math.random()*7)+12), Math.floor((Math.random()*5)+18)]
+// length of films array is 22 but last index is 21
+const randomIndexForFilms = [Math.floor(Math.random()*7), Math.floor((Math.random()*7)+6), Math.floor((Math.random()*7)+12), Math.floor((Math.random()*4)+18)]
 
 </script>
 
