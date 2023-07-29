@@ -2,7 +2,8 @@ import { defineStore } from 'pinia'
 
 export const useFilmStore = defineStore('films', {
   state: () => ({
-    films: null, 
+    films: "",
+    isLoading: true,
   }),
   actions: {
     async getFilms() {
@@ -10,6 +11,7 @@ export const useFilmStore = defineStore('films', {
       const data = await res.json()
 
       this.films = data
+      this.isLoading = false
     }
-  }
+  },
 })
