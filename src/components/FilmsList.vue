@@ -10,6 +10,7 @@ const router = useRouter()
 <template>
   <section class="flex flex-wrap justify-evenly">       
     <template v-for="(film,idx) in filmStore.films" :key="film.id">
+      <!-- when clicked, redirect to correct FilmsDetailsView page using index -->
       <div class="shadow-xl shadow-black flex flex-col 
                   w-[16rem] bg-zinc-200 mb-14 relative hover:scale-105
                   duration-75 cursor-pointer

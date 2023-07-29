@@ -1,5 +1,9 @@
 <script setup>
 import FilmsList from '../components/FilmsList.vue'
+import { useFilmStore } from '../store/useFilmStore.js'
+
+const store = useFilmStore()
+
 </script>
 
 <template>
@@ -7,6 +11,6 @@ import FilmsList from '../components/FilmsList.vue'
              mx-auto mt-6 mb-12 leading-snug
              font-bold max-w-xl">
              All Ghibli Movies</h1>
-  <FilmsList/>
+  <FilmsList v-if="!store.isLoading" />
 </template>
 

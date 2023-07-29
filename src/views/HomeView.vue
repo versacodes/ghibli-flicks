@@ -13,6 +13,7 @@ const store = useFilmStore()
              font-bold max-w-xl">
              Welcome to Ghibli Flicks</h1>
 
+  <!-- render only if api data has been fully loaded/fetched -->
   <FilmsSuggestions v-if="!store.isLoading" />
 </template>
 

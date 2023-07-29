@@ -24,7 +24,7 @@ const isMax = computed(() => {
              mx-auto my-12 leading-snug
               max-w-xl">
              Info About <br><span class="inline-block mt-3 text-5xl font-bold">"{{ filmStore.films[route.params.id].title }}"</span></h1>
-  <div class="flex justify-between mx-auto max-w-[50rem]">
+  <div class="flex justify-between mx-auto max-w-[40rem]">
     <!-- go to previous film by subtracting params.id by 1, params.id is index of film in films array  -->
     <!-- only show button if not at first film -->
     <button class="text-md border-neutral-300 border-solid border-2

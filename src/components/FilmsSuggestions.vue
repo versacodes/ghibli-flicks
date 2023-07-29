@@ -8,9 +8,8 @@ const router = useRouter()
 
 // choose random films based on random indexes
 // random from 0-6, 6-12, 12-18, 18-22
+// (max - min + 1) + 1
 const randomIndexForFilms = [Math.floor(Math.random()*7), Math.floor((Math.random()*7)+6), Math.floor((Math.random()*7)+12), Math.floor((Math.random()*5)+18)]
-
-
 
 </script>
 
@@ -19,16 +18,16 @@ const randomIndexForFilms = [Math.floor(Math.random()*7), Math.floor((Math.rando
     <h2 class="text-3xl text-center text-white">Film Suggestions</h2>
     <!-- render films based on random index -->
     <template v-for="val in randomIndexForFilms" :key="filmStore.films[val].id">
-        <div class="mt-10 sm:w-[43rem] w-[16rem] mx-auto"
+        <div class="mt-10 sm:w-[38rem] w-[16rem] mx-auto"
              @click="router.push(`/films/${val}`)">
-            <div class="bg-cover bg-center md:h-[20rem] h-[12rem] bg-cover"
+            <div class="bg-cover bg-center sm:h-[12rem] h-[9rem] bg-cover"
                  :style="{backgroundImage: `url(${filmStore.films[val].image})`}"
             >
             </div>
             <div class="flex justify-between items-center py-4 px-6 bg-zinc-700">
                 <h1 class="md:text-xl w-[70%] md:w-full text-sm font-bold text-neutral-100">
                            {{ filmStore.films[val].title }}</h1>
-                <p class="text-[0.7rem] text-neutral-200 mt-2">Directed By:<br>{{ filmStore.films[val].director }}</p>
+                <p class="text-[0.7rem] w-[50%] md:text-[1rem] text-neutral-200 mt-2">Directed By: {{ filmStore.films[val].director }}</p>
             </div>
         </div>
     </template>

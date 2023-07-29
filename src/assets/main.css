@@ -1,7 +1,12 @@
-@import './base.css';
+/* @import './base.css'; */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  background: #222;
+  transition: 0.1s;
+}
 
 #app {
   max-width: 1280px;
@@ -11,8 +16,7 @@
   font-weight: normal;
 }
 
-a,
-.green {
+a {
   text-decoration: none;
   color: hsla(60, 100%, 80%, 1);
   transition: 0.4s;
@@ -30,16 +34,3 @@ img {
     background-color: hsla(160, 100%, 37%, 0.2);
   }
 }
-
-/* @media (min-width: 1024px) { */
-/*   body { */
-/*     display: flex; */
-/*     place-items: center; */
-/*   } */
-
-/*   #app { */
-/*     display: grid; */
-/*     grid-template-columns: 1fr 1fr; */
-/*     padding: 0 2rem; */
-/*   } */
-/* } */
