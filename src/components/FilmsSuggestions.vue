@@ -22,7 +22,7 @@ const randomIndexForFilms = [Math.floor(Math.random()*7), Math.floor((Math.rando
         <div class="mt-10 sm:w-[38rem] w-[16rem] mx-auto"
              @click="router.push(`/films/${val}`)">
             <div class="bg-cover bg-center sm:h-[12rem] h-[9rem] bg-cover"
-                 :style="{backgroundImage: `url(${filmStore.films[val].image})`}"
+                 :style="{backgroundImage: `url(${filmStore.films[val].movie_banner})`}"
             >
             </div>
             <div class="flex justify-between items-center py-4 px-6 bg-zinc-700">
