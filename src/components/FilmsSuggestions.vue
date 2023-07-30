@@ -16,13 +16,15 @@ const randomIndexForFilms = [Math.floor(Math.random()*7), Math.floor((Math.rando
 
 <template>
   <section>
-    <h2 class="text-3xl text-center text-white">Film Suggestions</h2>
+    <h2 class="text-3xl text-center text-white font-bold">Film Suggestions</h2>
     <!-- render films based on random index -->
     <template v-for="val in randomIndexForFilms" :key="filmStore.films[val].id">
-        <div class="mt-10 sm:w-[38rem] w-[16rem] mx-auto"
+        <div class="mt-10 sm:w-[38rem] w-[16rem] mx-auto cursor-pointer 
+                    hover:scale-[1.03]"
              @click="router.push(`/films/${val}`)">
             <div class="bg-cover bg-center sm:h-[12rem] h-[9rem] bg-cover"
-                 :style="{backgroundImage: `url(${filmStore.films[val].movie_banner})`}"
+                 :style="{backgroundImage: 
+                        `url(${filmStore.films[val].movie_banner})`}"
             >
             </div>
             <div class="flex justify-between items-center py-4 px-6 bg-zinc-700">
